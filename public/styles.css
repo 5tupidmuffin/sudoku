@@ -17,6 +17,7 @@ body {
   /* gruvbox scheme */
   --green: #99ba84;
   --yellowyGreen: #bab54e;
+  --highGreen: #99ba84bb;
   --lowGreen: #99ba8473;
   --black: #282828;
   --yellow: #f1bb5b;
@@ -82,7 +83,7 @@ header h3 {
   align-items: center;
   color: var(--white);
   justify-content: center;
-  border: 1px solid var(--lowGreen);
+  border: 1px solid var(--highGreen);
   user-select: none; /* Standard */
   -webkit-user-select: none; /* Safari */
   -moz-user-select: none; /* Firefox */
@@ -90,7 +91,7 @@ header h3 {
 }
 
 /* if cell is selected */
-.highlightCell {
+.highlightedCell {
   color: var(--black);
   background-color: var(--yellowyGreen);
   border-color: var(--yellowyGreen);
@@ -100,7 +101,6 @@ header h3 {
 .preFilledCell {
   background-color: var(--lowGreen);
   color: var(--black);
-  border: none;
 }
 
 /* logic from  here: https://codepen.io/sdobson/pen/aEWBQw */
