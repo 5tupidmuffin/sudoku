@@ -15,16 +15,16 @@ body {
 
 :root {
   /* gruvbox scheme */
-  --green: #99ba84;
+  --green: #b7c391;
   --yellowyGreen: #bab54e;
-  --highGreen: #99ba84bb;
-  --lowGreen: #99ba8473;
-  --black: #282828;
+  --highGreen: #4a5439;
+  --lowGreen: #3f4331;
+  --black: #232321;
   --yellow: #f1bb5b;
   --red: #e85a4e;
   --orange: #ef8549;
   --blue: #8aa398;
-  --white: #dbd5b7;
+  --white: #e7dac2;
 }
 
 * {
@@ -94,13 +94,15 @@ header h3 {
 .highlightedCell {
   color: var(--black);
   background-color: var(--yellowyGreen);
-  border-color: var(--yellowyGreen);
 }
 
 /* if cell value is already filled */
 .preFilledCell {
   background-color: var(--lowGreen);
-  color: var(--black);
+}
+
+.invalid {
+  background-color: #e85a4e;
 }
 
 /* logic from  here: https://codepen.io/sdobson/pen/aEWBQw */
