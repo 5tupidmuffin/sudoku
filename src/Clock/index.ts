@@ -27,11 +27,16 @@ export default class Clock {
   }
 
   pause() {
-    clearInterval(this.flag);
+    if (this.flag) {
+      clearInterval(this.flag);
+      this.flag = null;
+    }
   }
   reset() {
     this.pause();
     this.time = 0;
+    this.minuteDis.textContent = `${0}M`;
+    this.secondDis.textContent = `${0}S`;
   }
   getTime() {
     return {
