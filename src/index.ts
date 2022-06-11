@@ -63,10 +63,12 @@ numberInputs.forEach((btn) => {
 });
 
 document.querySelector("#reset").addEventListener("click", () => {
+  board.resetBoard();
   for (let i = 0; i < 81; i++) {
     if (!cells[i].classList.contains("preFilledCell")) {
-      board.updateValue(i, null);
       logic.updateValue(i, 0);
+      selectedCell = null;
+      selectedCellIndex = null;
     }
   }
 });
@@ -83,9 +85,12 @@ document.querySelector("#validate").addEventListener("click", () => {
 
 document.querySelector("#new").addEventListener("click", () => {
   logic.board = logic.generateBoard();
+  board.clearBoard();
   board.fillBoard(logic.board);
   clock.reset();
   clock.start();
+  selectedCell = null;
+  selectedCellIndex = null;
 });
 
 const enableDebugging = (): void => {

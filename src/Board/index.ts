@@ -48,4 +48,22 @@ export default class Board {
       throw new Error(`tried to update prefilled cell: ${index}`);
     this.cells[index].textContent = "";
   }
+
+  resetBoard() {
+    for (let i = 0; i < 81; i++) {
+      this.cells[i].classList.remove("highlightedCell");
+      this.cells[i].classList.remove("invalid");
+      if (!this.cells[i].classList.contains("preFilledCell")) {
+        this.cells[i].textContent = "";
+      }
+    }
+  }
+
+  clearBoard() {
+    for (let i = 0; i < 81; i++) {
+      this.cells[i].classList.remove("invalid");
+      this.cells[i].classList.remove("preFilledCell");
+      this.cells[i].classList.remove("highlightedCell");
+    }
+  }
 }
