@@ -6,4 +6,4 @@ ghPages.publish("public", (err) => {
   }
 });
 
-console.log("deployed oh github pages");
+console.log("deployed on github pages");
