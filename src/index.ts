@@ -1,6 +1,7 @@
 import Board from "./Board";
 import Clock from "./Clock";
 import Logic from "./Logic";
+import Modal from "./Modal";
 
 declare global {
   interface Window {
@@ -15,6 +16,7 @@ const minuteDis = document.querySelector("#minute");
 const secondDis = document.querySelector("#second");
 const cells = document.querySelectorAll(".cell");
 const numberInputs = document.querySelectorAll(".numberInput");
+const successModal = new Modal(document.querySelector(".modal"));
 let selectedCell: null | Element = null;
 let selectedCellIndex: null | number = null;
 
@@ -54,7 +56,7 @@ numberInputs.forEach((btn) => {
       );
       if (logic.isFilled()) {
         if (logic.isBoardValid()) {
-          alert("Solved!");
+          successModal.show();
           clock.pause();
         }
       }
