@@ -59,7 +59,7 @@ export default class Logic {
     this.solve(tempBoard);
 
     for (let i = 0; i < 81; i++) {
-      if (Math.random() > 0.7) {
+      if (Math.random() < 0.6) {
         tempBoard[i] = 0;
       }
     }
