@@ -17,7 +17,7 @@ const sudokuSolver = (board: number[]): boolean => {
   return false;
 };
 
-const getEmptyCellIndex = (board: number[]): number => {
+const getEmptyCellIndex = (board: number[]): number | null => {
   for (let i = 0; i < 81; i++) {
     if (board[i] === 0) return i;
   }

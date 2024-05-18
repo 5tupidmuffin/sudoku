@@ -37,16 +37,10 @@ export default class Board {
     this.cells[this.highlightedCellIndex].classList.remove("invalid");
   }
 
-  updateValue(index: number, value: number) {
+  updateValue(index: number, value: number | null) {
     if (this.isPrefilled(index))
       throw new Error(`tried to update prefilled cell: ${index}`);
     this.cells[index].textContent = (<unknown>value) as string;
-  }
-
-  removeValue(index: number, value: number) {
-    if (this.isPrefilled(index))
-      throw new Error(`tried to update prefilled cell: ${index}`);
-    this.cells[index].textContent = "";
   }
 
   resetBoard() {

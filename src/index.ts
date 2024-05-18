@@ -12,11 +12,11 @@ declare global {
 }
 
 // clock setup
-const minuteDis = document.querySelector("#minute");
-const secondDis = document.querySelector("#second");
+const minuteDis = document.querySelector("#minute")!;
+const secondDis = document.querySelector("#second")!;
 const cells = document.querySelectorAll(".cell");
 const numberInputs = document.querySelectorAll(".numberInput");
-const successModal = new Modal(document.querySelector(".modal"));
+const successModal = new Modal(document.querySelector(".modal")!);
 let selectedCell: null | Element = null;
 let selectedCellIndex: null | number = null;
 
@@ -47,11 +47,11 @@ numberInputs.forEach((btn) => {
     e.preventDefault();
     if (selectedCell) {
       logic.updateValue(
-        selectedCellIndex,
+        selectedCellIndex!,
         btn.textContent === "X" ? 0 : Number(btn.textContent)
       );
       board.updateValue(
-        selectedCellIndex,
+        selectedCellIndex!,
         btn.textContent === "X" ? null : ((<unknown>btn.textContent) as number)
       );
       if (logic.isFilled()) {
@@ -64,7 +64,7 @@ numberInputs.forEach((btn) => {
   });
 });
 
-document.querySelector("#reset").addEventListener("click", () => {
+document.querySelector("#reset")!.addEventListener("click", () => {
   board.resetBoard();
   for (let i = 0; i < 81; i++) {
     if (!cells[i].classList.contains("preFilledCell")) {
@@ -75,7 +75,7 @@ document.querySelector("#reset").addEventListener("click", () => {
   }
 });
 
-document.querySelector("#validate").addEventListener("click", () => {
+document.querySelector("#validate")!.addEventListener("click", () => {
   for (let i = 0; i < 81; i++) {
     if (!cells[i].classList.contains("preFilledCell")) {
       if (logic.board[i] !== 0 && !logic.isCellValid(i)) {
@@ -85,7 +85,7 @@ document.querySelector("#validate").addEventListener("click", () => {
   }
 });
 
-document.querySelector("#new").addEventListener("click", () => {
+document.querySelector("#new")!.addEventListener("click", () => {
   logic.board = logic.generateBoard();
   board.clearBoard();
   board.fillBoard(logic.board);
