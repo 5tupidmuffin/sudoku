@@ -30,7 +30,7 @@ const logic = new Logic();
 board.fillBoard(logic.board);
 
 cells.forEach((cell, index) => {
-  cell.addEventListener("click", (e) => {
+  cell.addEventListener("click", (_e) => {
     board.removeHighlight();
     selectedCell = null;
     selectedCellIndex = null;
